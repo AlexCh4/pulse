@@ -3,6 +3,35 @@
 @media (max-width: 991px)
     .container
         max-width: 750px
+    .slick-dots
+        position: absolute
+        bottom: -25px
+        width: 100%
+        padding: 0
+        margin: 0
+        list-style: none
+        text-align: center
+        li
+            position: relative
+            display: inline-block
+            width: 20px
+            height: 20px
+            margin: 0 5px
+            padding: 0
+            button
+                font-size: 0
+                display: block
+                width: 11px
+                height: 11px
+                padding: 5px
+                border: 0
+                border-radius: 50%
+                background-color: #747070
+            &.slick-active
+                button
+                    width: 14px
+                    height: 14px
+                    background-color: #363535
     .title
         &_consultation
             font-size: 30px
@@ -19,6 +48,11 @@
     .advantages
         &__item
             max-width: 170px
+    .carousel
+        &__inner
+            width: 550px
+            img
+                width: 550px
     .title
         &_consultation
             font-size: 24px
@@ -64,6 +98,21 @@
         &__descr
             text-align: center
             font-size: 15px
+    .carousel
+        &__inner
+            width: 300px
+            img
+                width: 300px
+                height: 210px
+    .slick-dots
+        li
+            button
+                width: 8px
+                height: 11px
+            &.slick-active
+                button
+                    width: 11px
+                    height: 11px
     .title
         font-size: 18px
         &_consultation
