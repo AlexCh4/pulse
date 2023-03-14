@@ -24,7 +24,7 @@
                 width: 11px
                 height: 11px
                 padding: 5px
-                border: 0
+                border-width: 0px
                 border-radius: 50%
                 background-color: #747070
             &.slick-active
@@ -32,6 +32,8 @@
                     width: 14px
                     height: 14px
                     background-color: #363535
+                    border-width: 2px
+                    border-color: $main-color
     .title
         &_consultation
             font-size: 30px
@@ -53,6 +55,12 @@
             width: 550px
             img
                 width: 550px
+    .catalog
+        &__content
+            justify-content: center
+        &__tab
+            width: 160px
+            font-size: 16px
     .title
         &_consultation
             font-size: 24px
@@ -113,6 +121,12 @@
                 button
                     width: 11px
                     height: 11px
+    .catalog
+        &__tabs
+            height: 180px
+            justify-content: space-between
+            flex-direction: column
+            align-items: center
     .title
         font-size: 18px
         &_consultation
