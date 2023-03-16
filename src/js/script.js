@@ -34,19 +34,28 @@ $(document).ready(function(){
     toggleSlide('.catalog-item__link');
     toggleSlide('.catalog-item__back');
 
-    // Model
+    // Modal
+    let fadeCondition = false;
 
     $('[data-modal=consultation]').on('click', function() {
         $('.overlay, #consultation').fadeIn('slow');
+        $('.pageup').fadeOut();
+        fadeCondition = true;
     });
     $('.modal__close').on('click', function() {
         $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
+        if ($(window).scrollTop() > 2000) {
+            $('.pageup').fadeIn('slow');
+        }
+        fadeCondition = false;
     });
 
     $('.button_mini').each(function(i) {
         $(this).on('click', function() {
             $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
             $('.overlay, #order').fadeIn('slow');
+            $('.pageup').fadeOut();
+            fadeCondition = true;
         });
     });
 
@@ -95,7 +104,25 @@ $(document).ready(function(){
             $('#consultation, #order').fadeOut();
             $('.overlay, #thanks').fadeIn('slow');
             $('form').trigger('reset');
+            $('.pageup').fadeOut();
+            fadeCondition = true;
         });
+        return false;
+    });
+
+    //scroll & pageup
+
+    $(window).scroll(function() {
+        if (($(this).scrollTop() > 2000) && (fadeCondition == false)) {
+                $('.pageup').fadeIn('slow');
+        } else {
+            $('.pageup').fadeOut();
+        }
+    });
+
+    $("a[href^='#']").click(function() {
+        const _href = $(this).attr("href");
+        $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
         return false;
     });
 });
