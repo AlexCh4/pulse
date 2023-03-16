@@ -25,3 +25,17 @@
         a
             color: #ff0000
             text-decoration: underline
+    &__icon
+        &_animated-cup
+            animation: starcup 1s linear 1
+            animation-play-state: paused
+            &:hover
+                animation-play-state: running
+        &_animated-heart
+            animation: heartbeat 2s ease infinite
+            &:hover
+                animation-play-state: paused
+        &_animated-shoe
+            animation: runshoe 1.7s linear infinite
+            &:hover
+                animation-play-state: paused
