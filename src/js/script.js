@@ -15,10 +15,23 @@ $(document).ready(function(){
         ]
       });
 
+    const catalogItem1 = document.querySelector('#item1');
+    const catalogItem2 = document.querySelector('#item2');
+    const catalogItem3 = document.querySelector('#item3');
+    const catalogItem4 = document.querySelector('#item4');
+    const catalogItem5 = document.querySelector('#item5');
+    const catalogItem6 = document.querySelector('#item6');
+    
     $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
         $(this)
             .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
             .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
+            catalogItem1.removeAttribute('style');
+            catalogItem2.removeAttribute('style');
+            catalogItem3.removeAttribute('style');
+            catalogItem4.removeAttribute('style');
+            catalogItem5.removeAttribute('style');
+            catalogItem6.removeAttribute('style');
     });
 
     function toggleSlide(item) {
@@ -125,4 +138,9 @@ $(document).ready(function(){
         $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
         return false;
     });
+
+    new WOW({
+        animateClass: 'animate__animated',
+        mobile: false
+    }).init();
 });
